@@ -1,25 +1,39 @@
 <!DOCTYPE html>
     <head>
-        <title>Taffy Animator</title>
+    <title>Taffy Animator</title>
     </head>
     <body>
         <div class="content">
-            <div class="header"></div>
-            <ul class="navigation">
-                <li><a href="#">Portfolio</a></li>
-                <li><a class="showreel-text" href="https://vimeo.com/326227322">Showreel</a></li>
-                <li><a class="artstation-text" href="https://www.artstation.com/kyalta/albums/all">Artstation</a></li>
-                <li><a class="twitter-text" href="https://twitter.com/rolyatnoryk">Twitter</a></li>
-            </ul>
-            <ul class="portfolio">
-                <li style="--bg-image: url(https://cdnb.artstation.com/p/assets/images/images/014/849/449/20181227005234/small_square/kyron-taylor-merry-xmas.jpg?1545893554);"></li>
-                <li style="--bg-image: url(https://cdnb.artstation.com/p/assets/images/images/007/709/805/20171014113351/small_square/kyron-taylor-2002da28-36f1-4573-8307-96e8f51c9ba6.jpg?1507998831);"></li>
-                <li style="--bg-image: url(https://cdna.artstation.com/p/assets/images/images/007/709/672/20171014112710/smaller_square/kyron-taylor-890a082d-d148-4156-941f-49e65e98155c.jpg?1507998430);"></li>
-                <li style="--bg-image: url(https://cdna.artstation.com/p/assets/images/images/007/209/738/20170903203506/small_square/kyron-taylor-selfangsty.jpg?1504488907);"></li>
-                <li style="--bg-image: url(https://cdna.artstation.com/p/assets/images/images/007/199/576/20170903235907/small_square/kyron-taylor-img-0164.jpg?1504501147);"></li>
-                <li style="--bg-image: ;"></li>
-                <li style="--bg-image: url(https://cdnb.artstation.com/p/assets/images/images/006/727/719/20170723110550/smaller_square/kyron-taylor-edzilla-halloween-2014-by-green-jay26-d84to7b.jpg?1500825951);"></li>
-            </ul>
+            <div class="main">
+                <div class="main-top">
+                    <div class="header"></div>
+                    <ul class="navigation">
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a class="showreel-text" href="https://vimeo.com/326227322">Showreel</a></li>
+                        <li><a class="artstation-text" href="https://www.artstation.com/kyalta/albums/all">Artstation</a></li>
+                        <li><a class="twitter-text" href="https://twitter.com/rolyatnoryk">Twitter</a></li>
+                    </ul>
+                </div>
+                <ul class="portfolio">
+                    <li onclick="window.location = 'https://www.artstation.com/artwork/QzKggL'" style="--bg-image: url(https://cdnb.artstation.com/p/assets/images/images/014/849/449/20181227005234/small_square/kyron-taylor-merry-xmas.jpg?1545893554);"></li>
+                    <li onclick="window.location = 'https://www.artstation.com/artwork/5G0qE'" style="--bg-image: url(https://cdnb.artstation.com/p/assets/images/images/007/709/805/20171014113351/small_square/kyron-taylor-2002da28-36f1-4573-8307-96e8f51c9ba6.jpg?1507998831);"></li>
+                    <li onclick="window.location = 'https://www.artstation.com/artwork/r1ZyJ'" style="--bg-image: url(https://cdna.artstation.com/p/assets/images/images/007/709/672/20171014112710/smaller_square/kyron-taylor-890a082d-d148-4156-941f-49e65e98155c.jpg?1507998430);"></li>
+                    <li onclick="window.location = 'https://www.artstation.com/artwork/D8G9n'" style="--bg-image: url(https://cdna.artstation.com/p/assets/images/images/007/209/738/20170903203506/small_square/kyron-taylor-selfangsty.jpg?1504488907);"></li>
+                    <li onclick="window.location = 'https://www.artstation.com/artwork/bvNBk'" style="--bg-image: url(https://cdna.artstation.com/p/assets/images/images/007/199/576/20170903235907/small_square/kyron-taylor-img-0164.jpg?1504501147);"></li>
+                    <li style="--bg-image: ;"></li>
+                    <li onclick="window.location = 'https://www.artstation.com/artwork/5VWJJ'" style="--bg-image: url(https://cdnb.artstation.com/p/assets/images/images/006/727/719/20170723110550/smaller_square/kyron-taylor-edzilla-halloween-2014-by-green-jay26-d84to7b.jpg?1500825951);"></li>
+                </ul>
+            </div>
+            <div class="about-the-animator">
+                <div class="about-img"><img src="https://cdna.artstation.com/p/assets/images/images/007/209/738/large/kyron-taylor-selfangsty.jpg?1504488907" width="90%"/></div>
+                <div class="about-text">
+                    <h1>Taffy Animator</h1>
+                    <br/>
+                    <p>My name is <b>Kyron</b> and I'm an animator from <b>South Wales</b>.</p>
+                    <br/>
+                    <p>If you like what I do and want to shoot me a message, feel free to DM me on Twitter.</p>
+                </div>
+            </div>
         </div>
         <video src="video/showreel.mp4#t=12,53" muted autoplay showcontrols="false" style="width: 100%;" loop>
         <style>
@@ -34,7 +48,7 @@
                 overflow: hidden;
             }
             .content {
-                position: fixed;
+                position: absolute;
                 top: 0px;
                 left: 0px;
                 right: 0px;
@@ -42,6 +56,13 @@
                 overflow: auto;
                 z-index: 1;
                 scroll-behavior: smooth;
+            }
+            .main {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             }
             .header {
                 width: 100%;
@@ -72,8 +93,7 @@
             }
             .portfolio {
                 list-style: none;
-                position: fixed;
-                bottom: 0px;
+                overflow: auto;
             }
             .portfolio li {
                 display: inline-block;
@@ -119,6 +139,24 @@
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
             }
+            .about-the-animator {
+                height: 100%;
+                width: 100%;
+                background: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .about-img {
+                text-align: center;
+                width: 40%;
+            }
+            .about-text {
+                width: 60%;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+
             @keyframes spin {
                 from {transform:rotate(1deg);}
                 to {transform:rotate(361deg);}
@@ -132,6 +170,12 @@
                 }
                 .portfolio {
                     position: relative;
+                }
+                .about-img {
+                    display: none;
+                }
+                .about-text {
+                    width: 100%;
                 }
             }
         </style>
